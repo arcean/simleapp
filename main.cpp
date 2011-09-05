@@ -1,11 +1,9 @@
 #include <QtGui/QApplication>
-#include "qmlapplicationviewer.h"
+#include <QtDeclarative>
 
 #include "canvas.h"
 #include "canvastimer.h"
 #include "context2d.h"
-
-#include "qcanvas.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,12 +14,10 @@ int main(int argc, char *argv[])
     qmlRegisterUncreatableType<CanvasImage>("CanvasImage", 1, 0, "CanvasImage", QString());
     qmlRegisterUncreatableType<CanvasGradient>("Gradient", 1, 0, "Gradient", QString());
 
-    qmlRegisterType<QCanvas>("QCanvas", 1, 0, "QCanvas");
 
-    QmlApplicationViewer viewer;
-    viewer.setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
-    viewer.setMainQmlFile(QLatin1String("qml/SmileApp/main.qml"));
-    viewer.showExpanded();
+    QDeclarativeView view;
+    view.setSource(QUrl("qrc:qml/SmileApp/main.qml"));
+    view.showFullScreen();
 
     return app.exec();
 }

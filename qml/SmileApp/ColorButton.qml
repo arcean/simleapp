@@ -2,16 +2,18 @@ import QtQuick 1.0
 
 Rectangle {
     id:picker
-    width:22
-    height:22
+    width:80
+    height:80
 
     MouseArea {
         id:mousearea
         hoverEnabled:true
         anchors.fill: parent
         onClicked: {
-            canvas.drawColor = picker.color;
+            //canvas.drawColor = picker.color;
+            setCanvasColor(color);
             picker.focus = true
+            dialog.close();
         }
     }
     border.color: focus ? "#eee" : "#444"

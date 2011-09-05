@@ -14,6 +14,9 @@ Canvas {
     property int lineWidth: 2
     property variant drawColor: "black"
     property variant ctx: getContext("2d");
+    // 0 - line
+    // 1 - rectangle
+    property int drawingTool: 0
 
     MouseArea {
         id:mousearea
@@ -32,7 +35,7 @@ Canvas {
 
         onPositionChanged:  {
             if (mousearea.pressed)
-                strokeRect();
+                setDrawingTool();
             paintX = mouseX;
             paintY = mouseY;
         }
@@ -75,5 +78,16 @@ Canvas {
 
     function clear() {
         ctx.clearRect(0, 0, width, height);
+    }
+
+    function setTool(tool) {
+        drawingTool = tool;
+    }
+
+    function setDrawingTool() {
+        if(drawingTool == 0)
+            drawLineSegment();
+        else if (drawingTool == 1)
+            strokeRect();
     }
 }

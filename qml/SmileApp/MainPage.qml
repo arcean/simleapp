@@ -1,7 +1,6 @@
 import QtQuick 1.1
-import com.nokia.meego 1.0
+import com.meego 1.0
 import Canvas 1.0
-import QCanvas 1.0
 
 Page {
 
@@ -10,17 +9,20 @@ Page {
     orientationLock: PageOrientation.LockLandscape
 
 
-    Rectangle {
-        color:"#222"
-        anchors.fill: parent
-
         Drawing {
             id:canvas
-            width:parent.width
-            height:parent.height
-            anchors.margins:-2
-            x:-3
-            y:-3
+            anchors.fill: parent
         }
-    }
+
+        function clear() {
+            canvas.clear();
+        }
+
+        function setTool(tool) {
+            canvas.setTool(tool);
+        }
+
+        function setCanvasColor(color) {
+            canvas.drawColor = color;
+        }
 }

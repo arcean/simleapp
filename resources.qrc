@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/SmileApp/main.qml</file>
+        <file>qml/SmileApp/ColorButton.qml</file>
+        <file>qml/SmileApp/Drawing.qml</file>
+        <file>qml/SmileApp/MainPage.qml</file>
+        <file>qml/SmileApp/ColorPicker.qml</file>
+    </qresource>
+</RCC>

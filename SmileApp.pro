@@ -30,8 +30,7 @@ symbian:TARGET.CAPABILITY += NetworkServices
 SOURCES += main.cpp \
     context2d.cpp \
     canvastimer.cpp \
-    canvas.cpp \
-    qcanvas.cpp
+    canvas.cpp
 
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
@@ -48,8 +47,21 @@ OTHER_FILES += \
 HEADERS += \
     context2d.h \
     canvastimer.h \
-    canvas.h \
-    qcanvas.h
+    canvas.h
+
+RESOURCES += \
+    resources.qrc
+
+
+
+
+
+
+
+
+
+
+
 
 
 
